@@ -1,30 +1,37 @@
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">name: {{ name }}</div>
+    <svg-icon class="svg-icon" icon-class="programmer"/>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+  import svgIcon from '@/components/SvgIcon'
+  import { mapGetters } from 'vuex'
 
-export default {
-  name: 'Dashboard',
-  computed: {
-    ...mapGetters([
-      'name'
-    ])
+  export default {
+    components: { svgIcon },
+    name: 'Dashboard',
+    computed: {
+      ...mapGetters([
+        'name'
+      ])
+    }
   }
-}
 </script>
 
 <style lang="scss" scoped>
-.dashboard {
-  &-container {
-    margin: 30px;
+  .dashboard {
+    &-container {
+      height: calc(100vh - 50px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
-  &-text {
-    font-size: 30px;
-    line-height: 46px;
+
+  .svg-icon {
+    width: 50vw;
+    height: 50vh;
+    transform: translateX(15vw) translateY(10vh);
   }
-}
 </style>
