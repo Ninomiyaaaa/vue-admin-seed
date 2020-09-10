@@ -1,0 +1,44 @@
+/*自定义全局样式*/
+.app-container {
+  &.fullscreen {
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+
+    .page-top-container {
+      display: flex;
+      margin-bottom: 15px;
+
+      > * {
+        margin-right: 10px;
+      }
+    }
+
+    .page-table-container {
+      flex: 1;
+      height: 100%;
+
+      .col-operations {
+        > * {
+          margin: 0 5px;
+        }
+      }
+
+      .el-link {
+        font-size: 13px;
+      }
+    }
+
+    .page-pagination-container {
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .page-bottom-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+  }
+}

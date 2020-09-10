@@ -34,13 +34,13 @@ export const constantRoutes = [
   {
     path: '/login',
     component: () => import('@/views/login/index'),
-    hidden: true
+    hidden: true,
   },
 
   {
     path: '/404',
     component: () => import('@/views/404'),
-    hidden: true
+    hidden: true,
   },
 
   {
@@ -49,39 +49,31 @@ export const constantRoutes = [
     redirect: '/dashboard',
     children: [{
       path: 'dashboard',
-      name: 'Dashboard',
+      name: 'dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
-    }]
+      meta: { title: '主页', icon: 'dashboard' },
+    }],
   },
-
   {
-    path: '/example',
+    path: '/template',
     component: Layout,
     redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
+    name: 'template',
+    meta: { title: '页面模板', icon: 'form' },
     children: [
       {
         path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        name: 'templateTable',
+        component: () => import('@/views/template/table'),
+        meta: { title: '列表', icon: 'table' },
       },
-    ]
-  },
-
-  {
-    path: '/form',
-    component: Layout,
-    children: [
       {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
-      }
-    ]
+        path: 'editor',
+        name: 'templateEditor',
+        component: () => import('@/views/template/editor'),
+        meta: { title: '新增/编辑', icon: 'table' },
+      },
+    ],
   },
 
   {
@@ -91,7 +83,7 @@ export const constantRoutes = [
     name: 'Nested',
     meta: {
       title: 'Nested',
-      icon: 'nested'
+      icon: 'nested',
     },
     children: [
       {
@@ -104,7 +96,7 @@ export const constantRoutes = [
             path: 'menu1-1',
             component: () => import('@/views/nested/menu1/menu1-1'),
             name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
+            meta: { title: 'Menu1-1' },
           },
           {
             path: 'menu1-2',
@@ -116,41 +108,41 @@ export const constantRoutes = [
                 path: 'menu1-2-1',
                 component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
                 name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
+                meta: { title: 'Menu1-2-1' },
               },
               {
                 path: 'menu1-2-2',
                 component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
                 name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
+                meta: { title: 'Menu1-2-2' },
+              },
+            ],
           },
           {
             path: 'menu1-3',
             component: () => import('@/views/nested/menu1/menu1-3'),
             name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
+            meta: { title: 'Menu1-3' },
+          },
+        ],
       },
       {
         path: 'menu2',
         component: () => import('@/views/nested/menu2/index'),
         name: 'Menu2',
-        meta: { title: 'menu2' }
-      }
-    ]
+        meta: { title: 'menu2' },
+      },
+    ],
   },
 
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true }
+  { path: '*', redirect: '/404', hidden: true },
 ]
 
 const createRouter = () => new Router({
   // mode: 'history', // require service support
   scrollBehavior: () => ({ y: 0 }),
-  routes: constantRoutes
+  routes: constantRoutes,
 })
 
 const router = createRouter()
