@@ -57,7 +57,7 @@ export const constantRoutes = [
   {
     path: '/template',
     component: Layout,
-    redirect: '/example/table',
+    redirect: '/template/table',
     name: 'template',
     meta: { title: '页面模板', icon: 'form' },
     children: [
@@ -140,7 +140,7 @@ export const constantRoutes = [
 ]
 
 const createRouter = () => new Router({
-  // mode: 'history', // require service support
+  mode: 'history', // require service support
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes,
 })
