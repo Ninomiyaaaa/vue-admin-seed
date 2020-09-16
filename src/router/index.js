@@ -55,6 +55,28 @@ export const constantRoutes = [
     }],
   },
   {
+    path: '/goods',
+    component: Layout,
+    redirect: '/goods/table',
+    name: 'goods',
+    meta: { title: '商品中心', icon: 'form' },
+    children: [
+      {
+        path: 'table',
+        name: 'goodsTable',
+        component: () => import('@/views/goods/table'),
+        meta: { title: '商品列表', icon: 'table' },
+      },
+      {
+        path: 'editor',
+        name: 'goodsEditor',
+        component: () => import('@/views/goods/editor'),
+        meta: { title: '新增/编辑', icon: 'table' },
+        hidden: true,
+      },
+    ],
+  },
+  {
     path: '/template',
     component: Layout,
     redirect: '/template/table',

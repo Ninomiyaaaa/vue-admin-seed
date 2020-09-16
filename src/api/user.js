@@ -1,8 +1,8 @@
-import request from '@/utils/request'
+/*import request from '@/utils/request'
 
 export function login(data) {
   return request({
-    url: '/vue-admin-template/user/login',
+    url: '/user/login',
     method: 'post',
     data
   })
@@ -21,4 +21,10 @@ export function logout() {
     url: '/vue-admin-template/user/logout',
     method: 'post'
   })
+}*/
+import $http from '@/utils/http'
+
+// 商品新增
+export function login(params) {
+  return $http.POST('/user/login', params)
 }

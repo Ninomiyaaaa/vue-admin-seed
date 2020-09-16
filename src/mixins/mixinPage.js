@@ -27,7 +27,7 @@ export default {
       /**可替换变量 */
       search: {}, // 搜索条件
       deleteKey: 'ids', // 删除的key
-      deleteArrKey: 'id', // 删除对象的id
+      deleteArrKey: '_id', // 删除对象的id
       listApi: new Promise(() => {
       }), // 分页调用的api
       deleteApi: new Promise(() => {
